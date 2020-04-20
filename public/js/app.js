@@ -66756,12 +66756,53 @@ var TaskForm = /*#__PURE__*/function (_Component) {
   var _super = _createSuper(TaskForm);
 
   function TaskForm() {
+    var _this;
+
     _classCallCheck(this, TaskForm);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this);
+    _this.state = {
+      title: '',
+      description: '',
+      responsible: '',
+      priority: ''
+    };
+    _this.handleChangeTitle = _this.handleChangeTitle.bind(_assertThisInitialized(_this));
+    _this.handleChangeResponsible = _this.handleChangeResponsible.bind(_assertThisInitialized(_this));
+    _this.handleChangeDesc = _this.handleChangeDesc.bind(_assertThisInitialized(_this));
+    _this.handleChangePriority = _this.handleChangePriority.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(TaskForm, [{
+    key: "handleChangeTitle",
+    value: function handleChangeTitle(e) {
+      this.setState({
+        title: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangeResponsible",
+    value: function handleChangeResponsible(e) {
+      this.setState({
+        responsible: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangeDesc",
+    value: function handleChangeDesc(e) {
+      this.setState({
+        description: e.target.value
+      });
+    }
+  }, {
+    key: "handleChangePriority",
+    value: function handleChangePriority(e) {
+      this.setState({
+        priority: e.target.value
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -66776,26 +66817,30 @@ var TaskForm = /*#__PURE__*/function (_Component) {
         className: "form-control",
         name: "title",
         placeholder: "Title",
-        type: "text"
+        type: "text",
+        onChange: this.handleChangeTitle
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         name: "responsible",
         placeholder: "Responsible",
-        type: "text"
+        type: "text",
+        onChange: this.handleChangeResponsible
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "form-control",
         name: "description",
         placeholder: "Description",
-        type: "text"
+        type: "text",
+        onChange: this.handleChangeDesc
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "form-control",
-        name: "priority"
+        name: "priority",
+        onChange: this.handleChangePriority
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "low"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "medium"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "high"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary btn-block"
